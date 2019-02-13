@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Website</title>
+    
+    
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet"integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header">
+      <div id="menu">
+          <div id="branding"><img src="http://lorempixel.com/output/technics-q-c-308-61-4.jpg"></div>
+        <div id="minimenu"> <i class ="fa fa-bars"></i></div>  
+          
+          
+        <nav class="nav">
+          <ul>
+            <li ><a href="#home">Home</a></li>
+              <li ><a href="#about">About</a></li>
+              <li ><a href="#products">Products</a></li>
+              <li ><a href="#contact">Contact</a></li>
+              <li ><a href="#extra">Whatever</a></li>
+          </ul>
+          </nav>
+        </div>
+    </header>
+    
+    <div id="container">
+        <!-- This is the Home section -->
+        <section id="home" class="section">
+            <header><h1>Home Page</h1>
+            <h2>Welcome to my website</h2>
+            </header>
+           <article>
+            
+            
+            
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p> <p>Aenean commodo ligula eget dolor.
+               Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><p> Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate</p>
+        </article> </section>
+    <!-- this is the about section -->
+    
+        <section id="about" class="section">
+        
+        <header>
+            <h2>About secton</h2>
+            </header>
+           <article>
+            
+            
+            
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p> 
+            <p><img src="http://lorempixel.com/400/200"/></p>   
+               
+            <p>Aenean commodo ligula eget dolor.
+                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+               <p> Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate</p>
+        </article></section>
+    <!-- this is the products section -->
+    
+
+        <section id="products" class="section">
+        
+        <header>
+            <h2>Products section</h2>
+            </header>
+           <article>
+            
+            
+            
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p> <p>Aenean commodo ligula eget dolor.
+               Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p> Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate</p>
+        </article>
+        </section>
+    <!-- this is the contact section -->
+    
+        <section id="contact" class="section">
+        
+        <header>
+            <h2>contact section</h2>
+            </header>
+           <article>
+            
+            
+            
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p> <p>Aenean commodo ligula eget dolor.</p>
+           
+        </article></section>
+    <!-- this is the whatever section -->
+   
+    
+        <section id="extra" class="section">
+        
+        <header>
+            <h2>Extra</h2>
+            </header>
+           <article>
+            
+            
+           <p> Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate</p>
+        </article></section>
+    
+    
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   
+ <script>
+        
+        $(function()
+         {
+            $('#minimenu').click(function(){
+                
+             $('.nav').slideToggle();
+            });
+            
+            
+            $(window).bind('resize' , function(){
+                if($('#minimenu').css('display')=='none'){
+               $('.nav').show();
+               }else{
+                   $('.nav').hide();
+               }
+            
+            });
+         
+            
+            $('.nav li a').click(function(event){
+                var targetSection = $(this).attr('href');
+               var scrTo =$(targetSection).offset().top;
+               $('html,body').animate({scrollTop: scrTo}, 1000)
+               
+          console.log($('#minimenu').css('display'));
+            if($('#minimenu').css('display')=='block'){
+               $('.nav').slideUp();
+               }
+            
+            event.preventDefault();
+            
+            });
+            
+            
+        })
+    </script>
+    
+</body>
+
+
+
+</html>
